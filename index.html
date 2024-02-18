@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-white text-black">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Ticket</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <section>
+        <div class="section-header">
+            <h2 class="text-4xl text-center">P.H Paribahan</h2>
+            <p class="text-center">Enjoy our special bus service</p>
+        </div>
+        <div class="ticket-body flex p-5 gap-10">
+            <div class="ticket-content w-4/5 border p-5">
+                <div class="ticket-info flex justify-between border-b pb-3">
+                    <div class="flex gap-5 justify-center items-center">
+                        <div class="ticket-header">
+                            <img class="w-14" src="./images/bus-logo.png" alt=""/>
+                        </div>
+                        <div class="title">
+                            <h2 class="text-3xl font-bold">BlueLine Paribahan</h2>
+                            <p>Coach-009-WEB | AC_Business</p>
+                        </div>
+                    </div>
+                    <div class="seat-info flex justify-center items-center bg-[#1DD1004D] px-2 rounded-xl">
+                        <img src="./images/bus-icon.png" alt="">
+                        <p class="w-full text-green-700 ml-2"><span id="seat-remaining">40</span> Seats Left</p>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="ticket-data">
+                        <div class="route flex justify-between border-b">
+                            <p>Route</p>
+                            <p>Dhaka - Sylhet</p>
+                        </div>
+                        <div class="departure-time flex justify-between border-b">
+                            <p>Departure Time</p>
+                            <p>9:00pm</p>
+                        </div>
+                    </div>
+                    <div class="category-data flex justify-around">
+                        <p class="bg-[#03071233] rounded-xl px-4 py-1 mt-2">Boarding Point - Lakshmipur</p>
+                        <p class="bg-[#03071233] rounded-xl px-4 py-1 mt-2">Dropping Point - Bogura</p>
+                        <p class="bg-[#03071233] rounded-xl px-4 py-1 mt-2">Est. Time - 11 Hour</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-1/5 flex justify-center items-center">
+                <div class="ticket-price">
+                    <img src="./images/fare.png" alt="">
+                    <h2 class="text-2xl">550Taka</h2>
+                    <p>Per Seat</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="booking flex gap-10">
+        <div class="selectSeat w-1/2">
+            <h2>Select Your Seat</h2>
+            <div class="indicator">
+                <div class="available">
+                    <img src="./images/seat-gray.png" alt="">
+                    <p>available</p>
+                </div>
+                <div class="selected">
+                    <img src="./images/seat-green-filled.png" alt="">
+                    <p>Selected</p>
+                </div>
+            </div>
+            <div class="driver">
+                <img src="./images/driver.png" alt="">
+            </div>
+            <div id="seats" class="seats flex justify-between">
+                <div class="left-seats grid grid-cols-3 gap-3">
+                    <div>A</div>
+                    <div id="seatA1" class="px-3 py-1 bg-[#03071233]">A1</div>
+                    <div id="seatA2" class="px-3 py-1 bg-[#03071233]">A2</div>
+                    <div>B</div>
+                    <div id="seatB1" class="px-3 py-1 bg-[#03071233]">B1</div>
+                    <div id="seatB2" class="px-3 py-1 bg-[#03071233]">B2</div>
+                    <div>C</div>
+                    <div id="seatC1" class="px-3 py-1 bg-[#03071233]">C1</div>
+                    <div id="seatC2" class="px-3 py-1 bg-[#03071233]">C2</div>
+                    <div>D</div>
+                    <div id="seatD1" class="px-3 py-1 bg-[#03071233]">D1</div>
+                    <div id="seatD2" class="px-3 py-1 bg-[#03071233]">D2</div>
+                    <div>E</div>
+                    <div id="seatE1" class="px-3 py-1 bg-[#03071233]">E1</div>
+                    <div id="seatE2" class="px-3 py-1 bg-[#03071233]">E2</div>
+                    <div>F</div>
+                    <div id="seatF1" class="px-3 py-1 bg-[#03071233]">F1</div>
+                    <div id="seatF2" class="px-3 py-1 bg-[#03071233]">F2</div>
+                    <div>G</div>
+                    <div id="seatG1" class="px-3 py-1 bg-[#03071233]">G1</div>
+                    <div id="seatG2" class="px-3 py-1 bg-[#03071233]">G2</div>
+                    <div>H</div>
+                    <div id="seatH1" class="px-3 py-1 bg-[#03071233]">H1</div>
+                    <div id="seatH2" class="px-3 py-1 bg-[#03071233]">H2</div>
+                    <div>I</div>
+                    <div id="seatI1" class="px-3 py-1 bg-[#03071233]">I1</div>
+                    <div id="seatI2" class="px-3 py-1 bg-[#03071233]">I2</div>
+                    <div>J</div>
+                    <div id="seatJ1" class="px-3 py-1 bg-[#03071233]">J1</div>
+                    <div id="seatJ2" class="px-3 py-1 bg-[#03071233]">J2</div>
+                </div>
+                <div id="right-seats" class="right-seats grid grid-cols-2 gap-3">
+                    <div id="seatA3" class="px-3 py-1 bg-[#03071233]">A3</div>
+                    <div id="seatA4" class="px-3 py-1 bg-[#03071233]">A4</div>
+                    <div id="seatB3" class="px-3 py-1 bg-[#03071233]">B3</div>
+                    <div id="seatB4" class="px-3 py-1 bg-[#03071233]">B4</div>
+                    <div id="seatC3" class="px-3 py-1 bg-[#03071233]">C3</div>
+                    <div id="seatC4" class="px-3 py-1 bg-[#03071233]">C4</div>
+                    <div id="seatD3" class="px-3 py-1 bg-[#03071233]">D3</div>
+                    <div id="seatD4" class="px-3 py-1 bg-[#03071233]">D4</div>
+                    <div id="seatE3" class="px-3 py-1 bg-[#03071233]">E3</div>
+                    <div id="seatE4" class="px-3 py-1 bg-[#03071233]">E4</div>
+                    <div id="seatF3" class="px-3 py-1 bg-[#03071233]">F3</div>
+                    <div id="seatF4" class="px-3 py-1 bg-[#03071233]">F4</div>
+                    <div id="seatG3" class="px-3 py-1 bg-[#03071233]">G3</div>
+                    <div id="seatG4" class="px-3 py-1 bg-[#03071233]">G4</div>
+                    <div id="seatH3" class="px-3 py-1 bg-[#03071233]">H3</div>
+                    <div id="seatH4" class="px-3 py-1 bg-[#03071233]">H4</div>
+                    <div id="seatI3" class="px-3 py-1 bg-[#03071233]">I3</div>
+                    <div id="seatI4" class="px-3 py-1 bg-[#03071233]">I4</div>
+                    <div id="seatJ3" class="px-3 py-1 bg-[#03071233]">J3</div>
+                    <div id="seatJ4" class="px-3 py-1 bg-[#03071233]">J4</div>
+                </div>
+            </div>
+        </div>
+        <div class="checkout w-1/2 p-10">
+            <h2>Select Your Seat:</h2>
+            <table class="table border">
+                <tr>
+                    <th>Seat <span id="totalSeatCount">0</span></th>
+                    <th>Class</th>
+                    <th>Price</th>
+                </tr>
+               <tbody id="seatList">
+
+               </tbody>
+                <tr>
+                    <td colspan="2">Total Price</td>
+                    <td id="totalPrice">000/-</td>
+                </tr>
+            </table>
+            <div class="coupon flex mt-5">
+                <input class="bg-white border p-2 flex-1 mr-3 rounded-xl" type="text" placeholder="Enter your coupon code if any"/>
+                <button class="btn">Submit</button>
+            </div>
+        </div>
+    </section>
+    <script src="./js/default.js"></script>
+    <script src="./js/function.js"></script>
+</body>
+</html>
