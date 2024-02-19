@@ -5,7 +5,7 @@ function remainingSeatUpdate(){
     seatRemaining.innerText = totalSeatRemaining;
 }
 function bookedSeatCount(){
-    totalSeatCount.innerText = count;
+    totalSeatCount.innerText = count+1;
 }
 function updateSeatStyle(event){
     let seat = event.target;
@@ -34,26 +34,36 @@ function totalPriceCount(){
     totalPrice = totalPrice+550;
     totalPriceShow.innerText = totalPrice;
 }
-function applyCoupon(){
-    let couponInput = document.getElementById('coupon-input');
-    let couponInputText = couponInput.value;
-    if(couponInputText === 'NEW15'){
-        couponBtn.removeAttribute('disabled');
-        return 0.15;
-    }
-    else if(couponInputText === 'Couple 20'){
-        console.log('couple applied');
-        return 0.20;
-    }
-}
-function activeCouponButton(){
-    let couponInput = document.getElementById('coupon-input');
-    let couponInputText = couponInput.value;
-    let couponBtn = document.getElementById('couponBtn');
-    if(couponInputText === 'NEW15'){
-        couponBtn.removeAttribute('disabled');
-    }
-    else if(couponInputText === 'Couple 20'){
-        console.log('couple applied');
-    }
+
+function couponFinal(){
+    couponInput.addEventListener('keyup',function(){
+        let val = this.value;
+        if(val === 'NEW15'){
+            couponBtn.removeAttribute('disabled');
+        }
+        else if(val === 'Couple 20'){
+            couponBtn.removeAttribute('disabled');
+        }
+        else {
+            couponBtn.setAttribute('disabled',0);
+        }
+        
+    })
+    couponBtn.addEventListener('click', function(){
+        let val = couponInput.value;
+        if(val === 'NEW15'){
+            totalPrice = totalPrice - totalPrice*0.15;
+            totalPriceShow.innerText = totalPrice;
+            couponDiv.classList.add('hidden');
+            new15Msg.classList.remove('hidden');
+        }
+        else if(val === 'Couple 20'){
+            totalPrice = totalPrice - totalPrice*0.20;
+            console.log(totalPrice);
+            totalPriceShow.innerText = totalPrice;
+            couponDiv.classList.add('hidden');
+            couple20Msg.classList.remove('hidden');
+        }       
+        
+    })
 }

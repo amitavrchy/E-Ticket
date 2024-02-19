@@ -147,9 +147,13 @@
                     <td id="totalPrice">000/-</td>
                 </tr>
             </table>
-            <div class="coupon flex mt-5">
-                <input id="coupon-input" class="bg-white border p-2 flex-1 mr-3 rounded-xl" type="text" placeholder="Enter your coupon code if any"/>
-                <button id="couponBtn" class="btn" onclick="applyCoupon()" disabled>Submit</button>
+            <div id="couponDiv" class="coupon flex mt-5">
+                <input id="coupon-input" class="bg-white border p-2 flex-1 mr-3 rounded-xl" type="text" placeholder="Enter your coupon code if any" disabled/>
+                <button id="couponBtn" class="btn" disabled>Submit</button>
+            </div>
+            <div>
+                <p class="text-xl text-center w-full bg-green-500 mt-3 text-white rounded-xl py-2 hidden" id="new15">NEW15 Applied Succesfully</p>
+                <p class="text-xl text-center w-full bg-green-500 mt-3 text-white rounded-xl py-2 hidden" id="couple-20">Couple 20 Applied Succesfully</p>
             </div>
         </div>
     </section>
