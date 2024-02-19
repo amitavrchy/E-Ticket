@@ -34,3 +34,26 @@ function totalPriceCount(){
     totalPrice = totalPrice+550;
     totalPriceShow.innerText = totalPrice;
 }
+function applyCoupon(){
+    let couponInput = document.getElementById('coupon-input');
+    let couponInputText = couponInput.value;
+    if(couponInputText === 'NEW15'){
+        couponBtn.removeAttribute('disabled');
+        return 0.15;
+    }
+    else if(couponInputText === 'Couple 20'){
+        console.log('couple applied');
+        return 0.20;
+    }
+}
+function activeCouponButton(){
+    let couponInput = document.getElementById('coupon-input');
+    let couponInputText = couponInput.value;
+    let couponBtn = document.getElementById('couponBtn');
+    if(couponInputText === 'NEW15'){
+        couponBtn.removeAttribute('disabled');
+    }
+    else if(couponInputText === 'Couple 20'){
+        console.log('couple applied');
+    }
+}
