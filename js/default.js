@@ -32,7 +32,8 @@ function addSeatRow(event){
 }
 function totalPriceCount(){
     totalPrice = totalPrice+550;
-    totalPriceShow.innerText = totalPrice;
+    totalPriceShow.innerText = `BDT  ${totalPrice}`;
+    grandAmount.innerText = `BDT  ${totalPrice}`;
 }
 
 function couponFinal(){
@@ -53,14 +54,13 @@ function couponFinal(){
         let val = couponInput.value;
         if(val === 'NEW15'){
             totalPrice = totalPrice - totalPrice*0.15;
-            totalPriceShow.innerText = totalPrice;
+            grandAmount.innerText = `BDT  ${totalPrice}`;
             couponDiv.classList.add('hidden');
             new15Msg.classList.remove('hidden');
         }
         else if(val === 'Couple 20'){
             totalPrice = totalPrice - totalPrice*0.20;
-            console.log(totalPrice);
-            totalPriceShow.innerText = totalPrice;
+            grandAmount.innerText = `BDT  ${totalPrice}`;
             couponDiv.classList.add('hidden');
             couple20Msg.classList.remove('hidden');
         }       

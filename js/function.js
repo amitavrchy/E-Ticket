@@ -11,9 +11,12 @@ let couponInput = document.getElementById('coupon-input');
 let couponBtn = document.getElementById('couponBtn');
 const totalSeatCount = document.getElementById('totalSeatCount');
 const totalPriceShow = document.getElementById('totalPrice');
+const grandAmount = document.getElementById('grand-amount');
 const couponDiv = document.getElementById('couponDiv');
 const new15Msg = document.getElementById('new15');
 const couple20Msg = document.getElementById('couple-20');
+const modalBtn = document.getElementById('modalBtn');
+const modal = document.getElementById('my_modal_1');
 
 let count = 0;
 let totalPrice = 0;
@@ -43,4 +46,22 @@ function seatPurchse(event){
     }
 
 }
-console.log(couponFinal());
+couponFinal();
+
+document.addEventListener('DOMContentLoaded', function() {
+    const userName = document.getElementById('userName');
+    const userPhone = document.getElementById('userPhone');
+    const formSubmit = document.getElementById('formSubmit');
+
+    userName.addEventListener('input', checkInputs);
+    userPhone.addEventListener('input', checkInputs);
+
+    function checkInputs() {
+        if (userName.value !== '' && userPhone.value !== '') {
+            formSubmit.disabled = false;
+        } else {
+            formSubmit.disabled = true;
+        }
+    }
+});
+
